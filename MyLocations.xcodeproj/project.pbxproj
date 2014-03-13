@@ -22,6 +22,7 @@
 		59E31D9D18D13A5000F03728 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E31D7C18D13A5000F03728 /* UIKit.framework */; };
 		59E31DA518D13A5000F03728 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 59E31DA318D13A5000F03728 /* InfoPlist.strings */; };
 		59E31DA718D13A5000F03728 /* MyLocationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E31DA618D13A5000F03728 /* MyLocationsTests.m */; };
+		59E31DB118D1463C00F03728 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E31DB018D1463C00F03728 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		59E31DA218D13A5000F03728 /* MyLocationsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyLocationsTests-Info.plist"; sourceTree = "<group>"; };
 		59E31DA418D13A5000F03728 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		59E31DA618D13A5000F03728 /* MyLocationsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyLocationsTests.m; sourceTree = "<group>"; };
+		59E31DB018D1463C00F03728 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59E31DB118D1463C00F03728 /* CoreLocation.framework in Frameworks */,
 				59E31D7B18D13A5000F03728 /* CoreGraphics.framework in Frameworks */,
 				59E31D7D18D13A5000F03728 /* UIKit.framework in Frameworks */,
 				59E31D7918D13A5000F03728 /* Foundation.framework in Frameworks */,
@@ -104,6 +107,7 @@
 		59E31D7718D13A5000F03728 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				59E31DB018D1463C00F03728 /* CoreLocation.framework */,
 				59E31D7818D13A5000F03728 /* Foundation.framework */,
 				59E31D7A18D13A5000F03728 /* CoreGraphics.framework */,
 				59E31D7C18D13A5000F03728 /* UIKit.framework */,
