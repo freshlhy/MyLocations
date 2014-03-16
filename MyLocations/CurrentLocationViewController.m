@@ -17,11 +17,17 @@
   CLLocation *_location;
   BOOL _updatingLocation;
   NSError *_lastLocationError;
+    
+  CLGeocoder *_geocoder;
+  CLPlacemark *_placemark;
+  BOOL _performingReverseGeocoding;
+  NSError *_lastGeocodingError;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
   if ((self = [super initWithCoder:aDecoder])) {
     _locationManager = [[CLLocationManager alloc] init];
+    _geocoder = [[CLGeocoder alloc] init];
   }
   return self;
 }
@@ -105,6 +111,28 @@
     [self stopLocationManager];
     [self configureGetButton];
   }
+  
+  if (!_performingReverseGeocoding) {
+    NSLog(@"*** Going to geocode");
+    
+    _performingReverseGeocoding = YES;
+    
+    [_geocoder reverseGeocodeLocation:_location completionHandler:^(NSArray *placemarks, NSError *error) {
+      NSLog(@"*** Found placemarks: %@, error: %@", placemarks, error);
+      
+      _lastGeocodingError = error;
+      if (error == nil && [placemarks count] > 0) {
+        _placemark = [placemarks lastObject];
+      } else {
+        _placemark = nil;
+      }
+      
+      _performingReverseGeocoding = NO;
+      
+      [self updateLabels];
+      
+    }];
+  }
 }
 
 - (void)updateLabels {
@@ -117,6 +145,16 @@
 
     self.tagButton.hidden = NO;
     self.messageLabel.text = @"";
+    
+    if (_placemark != nil) {
+      self.addressLabel.text = [self stringFromPlacemark:_placemark];
+    } else if (_performingReverseGeocoding) {
+      self.addressLabel.text = @"Searching for Address...";
+    } else if (_lastGeocodingError != nil) {
+      self.addressLabel.text = @"Error Finding Address";
+    } else {
+      self.addressLabel.text = @"No Address Found";
+    }
 
   } else {
 
@@ -143,6 +181,13 @@
 
     self.messageLabel.text = statusMessage;
   }
+}
+
+- (NSString *)stringFromPlacemark:(CLPlacemark *)thePlacemark
+{
+  return [NSString stringWithFormat:@"%@ %@\n%@ %@ %@",
+          thePlacemark.subThoroughfare, thePlacemark.thoroughfare,thePlacemark.locality, thePlacemark.administrativeArea,
+          thePlacemark.postalCode];
 }
 
 - (void)configureGetButton {
