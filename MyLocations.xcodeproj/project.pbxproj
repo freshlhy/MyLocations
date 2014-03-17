@@ -23,6 +23,7 @@
 		59E31DA518D13A5000F03728 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 59E31DA318D13A5000F03728 /* InfoPlist.strings */; };
 		59E31DA718D13A5000F03728 /* MyLocationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E31DA618D13A5000F03728 /* MyLocationsTests.m */; };
 		59E31DB118D1463C00F03728 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E31DB018D1463C00F03728 /* CoreLocation.framework */; };
+		59EE268B18D72A8900D8930C /* LocationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EE268A18D72A8900D8930C /* LocationDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		59E31DA418D13A5000F03728 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		59E31DA618D13A5000F03728 /* MyLocationsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyLocationsTests.m; sourceTree = "<group>"; };
 		59E31DB018D1463C00F03728 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		59EE268918D72A8900D8930C /* LocationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDetailsViewController.h; sourceTree = "<group>"; };
+		59EE268A18D72A8900D8930C /* LocationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 				59E31D9118D13A5000F03728 /* SecondViewController.m */,
 				59E31D9318D13A5000F03728 /* Images.xcassets */,
 				59E31D7F18D13A5000F03728 /* Supporting Files */,
+				59EE268918D72A8900D8930C /* LocationDetailsViewController.h */,
+				59EE268A18D72A8900D8930C /* LocationDetailsViewController.m */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 				59E31D8918D13A5000F03728 /* AppDelegate.m in Sources */,
 				59E31D8F18D13A5000F03728 /* CurrentLocationViewController.m in Sources */,
 				59E31D8518D13A5000F03728 /* main.m in Sources */,
+				59EE268B18D72A8900D8930C /* LocationDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

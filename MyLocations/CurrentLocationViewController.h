@@ -6,9 +6,6 @@
 //  Copyright (c) 2014 showgram. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
-
 @interface CurrentLocationViewController : UIViewController <CLLocationManagerDelegate>
 
 @property (nonatomic, weak) IBOutlet UILabel *messageLabel;
