@@ -17,7 +17,7 @@
   CLLocation *_location;
   BOOL _updatingLocation;
   NSError *_lastLocationError;
-    
+
   CLGeocoder *_geocoder;
   CLPlacemark *_placemark;
   BOOL _performingReverseGeocoding;
@@ -76,14 +76,33 @@
     _locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
     [_locationManager startUpdatingLocation];
     _updatingLocation = YES;
+
+    [self performSelector:@selector(didTimeOut:) withObject:nil afterDelay:60];
   }
 }
 
 - (void)stopLocationManager {
   if (_updatingLocation) {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self
+                                             selector:@selector(didTimeOut:)
+                                               object:nil];
     [_locationManager stopUpdatingLocation];
     _locationManager.delegate = nil;
     _updatingLocation = NO;
+  }
+}
+
+- (void)didTimeOut:(id)obj {
+  NSLog(@"*** Time out");
+
+  if (_location == nil) {
+    [self stopLocationManager];
+
+    _lastLocationError =
+        [NSError errorWithDomain:@"MyLocationErrorDomain" code:1 userInfo:nil];
+
+    [self updateLabels];
+    [self configureGetButton];
   }
 }
 
@@ -99,39 +118,58 @@
     return;
   }
 
+  CLLocationDistance distance = MAXFLOAT;
+  if (_location != nil) {
+    distance = [newLocation distanceFromLocation:_location];
+  }
+
   if (_location == nil ||
       _location.horizontalAccuracy > newLocation.horizontalAccuracy) {
     _lastLocationError = nil;
     _location = newLocation;
     [self updateLabels];
-  }
 
-  if (newLocation.horizontalAccuracy <= _locationManager.desiredAccuracy) {
-    NSLog(@"*** We are done!");
-    [self stopLocationManager];
-    [self configureGetButton];
-  }
-  
-  if (!_performingReverseGeocoding) {
-    NSLog(@"*** Going to geocode");
-    
-    _performingReverseGeocoding = YES;
-    
-    [_geocoder reverseGeocodeLocation:_location completionHandler:^(NSArray *placemarks, NSError *error) {
-      NSLog(@"*** Found placemarks: %@, error: %@", placemarks, error);
-      
-      _lastGeocodingError = error;
-      if (error == nil && [placemarks count] > 0) {
-        _placemark = [placemarks lastObject];
-      } else {
-        _placemark = nil;
+    if (newLocation.horizontalAccuracy <= _locationManager.desiredAccuracy) {
+      NSLog(@"*** We are done!");
+      [self stopLocationManager];
+      [self configureGetButton];
+
+      if (distance < 0) {
+        _performingReverseGeocoding = NO;
       }
-      
-      _performingReverseGeocoding = NO;
-      
+    }
+
+    if (!_performingReverseGeocoding) {
+      NSLog(@"*** Going to geocode");
+
+      _performingReverseGeocoding = YES;
+
+      [_geocoder reverseGeocodeLocation:_location
+                      completionHandler:^(NSArray *placemarks, NSError *error) {
+                          NSLog(@"*** Found placemarks: %@, error: %@",
+                                placemarks, error);
+
+                          _lastGeocodingError = error;
+                          if (error == nil && [placemarks count] > 0) {
+                            _placemark = [placemarks lastObject];
+                          } else {
+                            _placemark = nil;
+                          }
+
+                          _performingReverseGeocoding = NO;
+
+                          [self updateLabels];
+                      }];
+    }
+  } else if (distance < 1.0) {
+    NSTimeInterval timeInterval =
+        [newLocation.timestamp timeIntervalSinceDate:_location.timestamp];
+    if (timeInterval > 10) {
+      NSLog(@"*** Force done!");
+      [self stopLocationManager];
       [self updateLabels];
-      
-    }];
+      [self configureGetButton];
+    }
   }
 }
 
@@ -145,7 +183,7 @@
 
     self.tagButton.hidden = NO;
     self.messageLabel.text = @"";
-    
+
     if (_placemark != nil) {
       self.addressLabel.text = [self stringFromPlacemark:_placemark];
     } else if (_performingReverseGeocoding) {
@@ -183,11 +221,11 @@
   }
 }
 
-- (NSString *)stringFromPlacemark:(CLPlacemark *)thePlacemark
-{
-  return [NSString stringWithFormat:@"%@ %@\n%@ %@ %@",
-          thePlacemark.subThoroughfare, thePlacemark.thoroughfare,thePlacemark.locality, thePlacemark.administrativeArea,
-          thePlacemark.postalCode];
+- (NSString *)stringFromPlacemark:(CLPlacemark *)thePlacemark {
+  return [NSString
+      stringWithFormat:@"%@ %@\n%@ %@", thePlacemark.locality,
+                       thePlacemark.subLocality,
+                       thePlacemark.administrativeArea, thePlacemark.country];
 }
 
 - (void)configureGetButton {
