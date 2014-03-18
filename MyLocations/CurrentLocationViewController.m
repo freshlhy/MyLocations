@@ -223,10 +223,11 @@
 }
 
 - (NSString *)stringFromPlacemark:(CLPlacemark *)thePlacemark {
-  return [NSString
-      stringWithFormat:@"%@ %@\n%@ %@", thePlacemark.locality,
-                       thePlacemark.subLocality,
-                       thePlacemark.administrativeArea, thePlacemark.country];
+  return [NSString stringWithFormat:@"%@ %@\n%@ %@", thePlacemark.subLocality,
+          thePlacemark.locality,
+          thePlacemark.administrativeArea,
+          thePlacemark.country];
+
 }
 
 - (void)configureGetButton {
@@ -234,6 +235,18 @@
     [self.getButton setTitle:@"Stop" forState:UIControlStateNormal];
   } else {
     [self.getButton setTitle:@"Get My Location" forState:UIControlStateNormal];
+  }
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  if ([segue.identifier isEqualToString:@"TagLocation"]) {
+    UINavigationController *navigationController = segue.destinationViewController;
+    
+    LocationDetailsViewController *controller = (LocationDetailsViewController *)navigationController.topViewController;
+    controller.coordinate = _location.coordinate;
+    controller.placemark = _placemark;
   }
 }
 
