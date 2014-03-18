@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		59DC6B4418D7EED9006F0DBC /* CategoryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DC6B4318D7EED9006F0DBC /* CategoryPickerViewController.m */; };
+		59DC6B4718D834A4006F0DBC /* HudView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DC6B4618D834A4006F0DBC /* HudView.m */; };
 		59E31D7918D13A5000F03728 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E31D7818D13A5000F03728 /* Foundation.framework */; };
 		59E31D7B18D13A5000F03728 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E31D7A18D13A5000F03728 /* CoreGraphics.framework */; };
 		59E31D7D18D13A5000F03728 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E31D7C18D13A5000F03728 /* UIKit.framework */; };
@@ -40,6 +41,8 @@
 /* Begin PBXFileReference section */
 		59DC6B4218D7EED9006F0DBC /* CategoryPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPickerViewController.h; sourceTree = "<group>"; };
 		59DC6B4318D7EED9006F0DBC /* CategoryPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryPickerViewController.m; sourceTree = "<group>"; };
+		59DC6B4518D834A4006F0DBC /* HudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudView.h; sourceTree = "<group>"; };
+		59DC6B4618D834A4006F0DBC /* HudView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudView.m; sourceTree = "<group>"; };
 		59E31D7518D13A5000F03728 /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59E31D7818D13A5000F03728 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		59E31D7A18D13A5000F03728 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -138,6 +141,8 @@
 				59EE268A18D72A8900D8930C /* LocationDetailsViewController.m */,
 				59DC6B4218D7EED9006F0DBC /* CategoryPickerViewController.h */,
 				59DC6B4318D7EED9006F0DBC /* CategoryPickerViewController.m */,
+				59DC6B4518D834A4006F0DBC /* HudView.h */,
+				59DC6B4618D834A4006F0DBC /* HudView.m */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 				59E31D8918D13A5000F03728 /* AppDelegate.m in Sources */,
 				59E31D8F18D13A5000F03728 /* CurrentLocationViewController.m in Sources */,
 				59E31D8518D13A5000F03728 /* main.m in Sources */,
+				59DC6B4718D834A4006F0DBC /* HudView.m in Sources */,
 				59DC6B4418D7EED9006F0DBC /* CategoryPickerViewController.m in Sources */,
 				59EE268B18D72A8900D8930C /* LocationDetailsViewController.m in Sources */,
 			);
