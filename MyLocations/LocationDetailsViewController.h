@@ -10,5 +10,6 @@
 
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 @property (nonatomic, assign) CLPlacemark *placemark;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 @end
