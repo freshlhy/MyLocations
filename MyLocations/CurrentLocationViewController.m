@@ -152,7 +152,7 @@
 
                           _lastGeocodingError = error;
                           if (error == nil && [placemarks count] > 0) {
-//                            _placemark = [placemarks lastObject];
+                            _placemark = [placemarks lastObject];
                           } else {
                             _placemark = nil;
                           }
