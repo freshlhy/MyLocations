@@ -8,7 +8,10 @@
 
 #import "AppDelegate.h"
 #import "CurrentLocationViewController.h"
-NSString * const ManagedObjectContextSaveDidFailNotification = @"ManagedObjectContextSaveDidFailNotification";
+#import "LocationsViewController.h"
+
+NSString *const ManagedObjectContextSaveDidFailNotification =
+    @"ManagedObjectContextSaveDidFailNotification";
 
 @interface AppDelegate () <UIAlertViewDelegate>
 @property(nonatomic, strong) NSManagedObjectContext *managedObjectContext;
@@ -21,12 +24,16 @@ NSString * const ManagedObjectContextSaveDidFailNotification = @"ManagedObjectCo
 
 - (void)fatalCoreDataError:(NSNotification *)notification {
   UIAlertView *alertView = [[UIAlertView alloc]
-                            initWithTitle:NSLocalizedString(@"Internal Error", nil)
-                            message:NSLocalizedString(@"There was a fatal error in the app and it cannot continue.\n\nPress OK to terminate the app. Sorry for the inconvenience.", nil)
-                                                      delegate:self
-                                                      cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                                      otherButtonTitles:nil];
-                                                      [alertView show];
+          initWithTitle:NSLocalizedString(@"Internal Error", nil)
+                message:NSLocalizedString(@"There was a fatal error in the app "
+                                          @"and it cannot continue.\n\nPress "
+                                          @"OK to terminate the app. Sorry "
+                                          @"for the inconvenience.",
+                                          nil)
+               delegate:self
+      cancelButtonTitle:NSLocalizedString(@"OK", nil)
+      otherButtonTitles:nil];
+  [alertView show];
 }
 
 - (BOOL)application:(UIApplication *)application
@@ -37,6 +44,12 @@ NSString * const ManagedObjectContextSaveDidFailNotification = @"ManagedObjectCo
       (CurrentLocationViewController *)tabBarController.viewControllers[0];
   currentLocationViewController.managedObjectContext =
       self.managedObjectContext;
+
+  UINavigationController *navigationController =
+      (UINavigationController *)tabBarController.viewControllers[1];
+  LocationsViewController *locationsViewController =
+      (LocationsViewController *)navigationController.viewControllers[0];
+  locationsViewController.managedObjectContext = self.managedObjectContext;
 
   [[NSNotificationCenter defaultCenter]
       addObserver:self
@@ -132,7 +145,8 @@ NSString * const ManagedObjectContextSaveDidFailNotification = @"ManagedObjectCo
   return _managedObjectContext;
 }
 
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+- (void)alertView:(UIAlertView *)alertView
+    didDismissWithButtonIndex:(NSInteger)buttonIndex {
   abort();
 }
 

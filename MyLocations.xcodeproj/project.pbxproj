@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5907AF0A18DA957500A43268 /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5907AF0918DA957500A43268 /* LocationsViewController.m */; };
+		5907AF0D18DA9CDF00A43268 /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5907AF0C18DA9CDF00A43268 /* LocationCell.m */; };
 		59DC6B4418D7EED9006F0DBC /* CategoryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DC6B4318D7EED9006F0DBC /* CategoryPickerViewController.m */; };
 		59DC6B4718D834A4006F0DBC /* HudView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DC6B4618D834A4006F0DBC /* HudView.m */; };
 		59E31D7918D13A5000F03728 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E31D7818D13A5000F03728 /* Foundation.framework */; };
@@ -17,7 +19,6 @@
 		59E31D8918D13A5000F03728 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E31D8818D13A5000F03728 /* AppDelegate.m */; };
 		59E31D8C18D13A5000F03728 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E31D8A18D13A5000F03728 /* Main.storyboard */; };
 		59E31D8F18D13A5000F03728 /* CurrentLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E31D8E18D13A5000F03728 /* CurrentLocationViewController.m */; };
-		59E31D9218D13A5000F03728 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E31D9118D13A5000F03728 /* SecondViewController.m */; };
 		59E31D9418D13A5000F03728 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59E31D9318D13A5000F03728 /* Images.xcassets */; };
 		59E31D9B18D13A5000F03728 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E31D9A18D13A5000F03728 /* XCTest.framework */; };
 		59E31D9C18D13A5000F03728 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E31D7818D13A5000F03728 /* Foundation.framework */; };
@@ -42,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5907AF0818DA957500A43268 /* LocationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationsViewController.h; sourceTree = "<group>"; };
+		5907AF0918DA957500A43268 /* LocationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsViewController.m; sourceTree = "<group>"; };
+		5907AF0B18DA9CDF00A43268 /* LocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCell.h; sourceTree = "<group>"; };
+		5907AF0C18DA9CDF00A43268 /* LocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCell.m; sourceTree = "<group>"; };
 		59DC6B4218D7EED9006F0DBC /* CategoryPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPickerViewController.h; sourceTree = "<group>"; };
 		59DC6B4318D7EED9006F0DBC /* CategoryPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryPickerViewController.m; sourceTree = "<group>"; };
 		59DC6B4518D834A4006F0DBC /* HudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudView.h; sourceTree = "<group>"; };
@@ -59,8 +64,6 @@
 		59E31D8B18D13A5000F03728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		59E31D8D18D13A5000F03728 /* CurrentLocationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLocationViewController.h; sourceTree = "<group>"; };
 		59E31D8E18D13A5000F03728 /* CurrentLocationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentLocationViewController.m; sourceTree = "<group>"; };
-		59E31D9018D13A5000F03728 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		59E31D9118D13A5000F03728 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		59E31D9318D13A5000F03728 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		59E31D9918D13A5000F03728 /* MyLocationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyLocationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59E31D9A18D13A5000F03728 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -142,8 +145,6 @@
 				59E31D8A18D13A5000F03728 /* Main.storyboard */,
 				59E31D8D18D13A5000F03728 /* CurrentLocationViewController.h */,
 				59E31D8E18D13A5000F03728 /* CurrentLocationViewController.m */,
-				59E31D9018D13A5000F03728 /* SecondViewController.h */,
-				59E31D9118D13A5000F03728 /* SecondViewController.m */,
 				59E31D9318D13A5000F03728 /* Images.xcassets */,
 				59E31D7F18D13A5000F03728 /* Supporting Files */,
 				59EE268918D72A8900D8930C /* LocationDetailsViewController.h */,
@@ -155,6 +156,10 @@
 				59EE268E18D87E8600D8930C /* DataModel.xcdatamodeld */,
 				59EE269118D89B2C00D8930C /* Location.h */,
 				59EE269218D89B2C00D8930C /* Location.m */,
+				5907AF0818DA957500A43268 /* LocationsViewController.h */,
+				5907AF0918DA957500A43268 /* LocationsViewController.m */,
+				5907AF0B18DA9CDF00A43268 /* LocationCell.h */,
+				5907AF0C18DA9CDF00A43268 /* LocationCell.m */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -285,9 +290,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59E31D9218D13A5000F03728 /* SecondViewController.m in Sources */,
 				59EE269018D87E8600D8930C /* DataModel.xcdatamodeld in Sources */,
 				59E31D8918D13A5000F03728 /* AppDelegate.m in Sources */,
+				5907AF0D18DA9CDF00A43268 /* LocationCell.m in Sources */,
+				5907AF0A18DA957500A43268 /* LocationsViewController.m in Sources */,
 				59E31D8F18D13A5000F03728 /* CurrentLocationViewController.m in Sources */,
 				59EE269318D89B2C00D8930C /* Location.m in Sources */,
 				59E31D8518D13A5000F03728 /* main.m in Sources */,
