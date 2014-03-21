@@ -138,6 +138,48 @@
             </objects>
             <point key="canvasLocation" x="723" y="579"/>
         </scene>
+        <!--Map View Controller - Map-->
+        <scene sceneID="SC8-Os-2n8">
+            <objects>
+                <viewController id="WpW-vl-jjH" customClass="MapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QRo-aq-GDH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="Tt9-35-N9x">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                            <navigationBar contentMode="scaleToFill" id="oVZ-VM-weS">
+                                <rect key="frame" x="0.0" y="15" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Map" id="ROP-Ku-bYl">
+                                        <barButtonItem key="leftBarButtonItem" title="Locations" id="QQF-tK-qQj">
+                                            <connections>
+                                                <action selector="showLocations" destination="WpW-vl-jjH" id="4dB-lK-dKs"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="User" id="sMe-Zv-yrg">
+                                            <connections>
+                                                <action selector="showUser" destination="WpW-vl-jjH" id="rGH-Yp-srO"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" id="J9H-ZB-glb"/>
+                    <connections>
+                        <outlet property="mapView" destination="Tt9-35-N9x" id="MyJ-7S-Tpm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qmy-SE-eff" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="235" y="1323"/>
+        </scene>
         <!--Navigation Controller - Locations-->
         <scene sceneID="yKQ-r7-Lae">
             <objects>
@@ -420,6 +462,7 @@
                     <connections>
                         <segue destination="CZ4-MO-1fc" kind="relationship" relationship="viewControllers" id="SUk-Ux-ee1"/>
                         <segue destination="7Wl-B0-7Af" kind="relationship" relationship="viewControllers" id="XGL-f0-xVc"/>
+                        <segue destination="WpW-vl-jjH" kind="relationship" relationship="viewControllers" id="zf7-4V-jUB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
@@ -455,6 +498,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="tgA-Zv-7Vj"/>
+        <segue reference="gfu-9m-YH8"/>
     </inferredMetricsTieBreakers>
 </document>

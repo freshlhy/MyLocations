@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5907AF0A18DA957500A43268 /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5907AF0918DA957500A43268 /* LocationsViewController.m */; };
 		5907AF0D18DA9CDF00A43268 /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5907AF0C18DA9CDF00A43268 /* LocationCell.m */; };
+		59A0881618DBF4910060248F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A0881518DBF4910060248F /* MapKit.framework */; };
+		59A0881918DC1B860060248F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A0881818DC1B860060248F /* MapViewController.m */; };
 		59DC6B4418D7EED9006F0DBC /* CategoryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DC6B4318D7EED9006F0DBC /* CategoryPickerViewController.m */; };
 		59DC6B4718D834A4006F0DBC /* HudView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DC6B4618D834A4006F0DBC /* HudView.m */; };
 		59E31D7918D13A5000F03728 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E31D7818D13A5000F03728 /* Foundation.framework */; };
@@ -47,6 +49,9 @@
 		5907AF0918DA957500A43268 /* LocationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsViewController.m; sourceTree = "<group>"; };
 		5907AF0B18DA9CDF00A43268 /* LocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCell.h; sourceTree = "<group>"; };
 		5907AF0C18DA9CDF00A43268 /* LocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCell.m; sourceTree = "<group>"; };
+		59A0881518DBF4910060248F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		59A0881718DC1B860060248F /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		59A0881818DC1B860060248F /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		59DC6B4218D7EED9006F0DBC /* CategoryPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPickerViewController.h; sourceTree = "<group>"; };
 		59DC6B4318D7EED9006F0DBC /* CategoryPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryPickerViewController.m; sourceTree = "<group>"; };
 		59DC6B4518D834A4006F0DBC /* HudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudView.h; sourceTree = "<group>"; };
@@ -84,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59A0881618DBF4910060248F /* MapKit.framework in Frameworks */,
 				59EE268D18D87E3000D8930C /* CoreData.framework in Frameworks */,
 				59E31DB118D1463C00F03728 /* CoreLocation.framework in Frameworks */,
 				59E31D7B18D13A5000F03728 /* CoreGraphics.framework in Frameworks */,
@@ -127,6 +133,7 @@
 		59E31D7718D13A5000F03728 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				59A0881518DBF4910060248F /* MapKit.framework */,
 				59EE268C18D87E3000D8930C /* CoreData.framework */,
 				59E31DB018D1463C00F03728 /* CoreLocation.framework */,
 				59E31D7818D13A5000F03728 /* Foundation.framework */,
@@ -160,6 +167,8 @@
 				5907AF0918DA957500A43268 /* LocationsViewController.m */,
 				5907AF0B18DA9CDF00A43268 /* LocationCell.h */,
 				5907AF0C18DA9CDF00A43268 /* LocationCell.m */,
+				59A0881718DC1B860060248F /* MapViewController.h */,
+				59A0881818DC1B860060248F /* MapViewController.m */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -300,6 +309,7 @@
 				59DC6B4718D834A4006F0DBC /* HudView.m in Sources */,
 				59DC6B4418D7EED9006F0DBC /* CategoryPickerViewController.m in Sources */,
 				59EE268B18D72A8900D8930C /* LocationDetailsViewController.m in Sources */,
+				59A0881918DC1B860060248F /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
