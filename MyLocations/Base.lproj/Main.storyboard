@@ -87,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="499" y="-140"/>
+            <point key="canvasLocation" x="473" y="-940"/>
         </scene>
         <!--Locations View Controller - Locations-->
         <scene sceneID="duY-qg-2BG">
@@ -136,7 +136,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Xn-zx-hIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="723" y="579"/>
+            <point key="canvasLocation" x="723" y="-140"/>
         </scene>
         <!--Map View Controller - Map-->
         <scene sceneID="SC8-Os-2n8">
@@ -149,6 +149,9 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="Tt9-35-N9x">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="WpW-vl-jjH" id="YdK-Uf-2HC"/>
+                                </connections>
                             </mapView>
                             <navigationBar contentMode="scaleToFill" id="oVZ-VM-weS">
                                 <rect key="frame" x="0.0" y="15" width="320" height="44"/>
@@ -167,6 +170,9 @@
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
+                                <connections>
+                                    <outlet property="delegate" destination="WpW-vl-jjH" id="AYb-Sz-qKq"/>
+                                </connections>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -174,11 +180,12 @@
                     <tabBarItem key="tabBarItem" title="Map" id="J9H-ZB-glb"/>
                     <connections>
                         <outlet property="mapView" destination="Tt9-35-N9x" id="MyJ-7S-Tpm"/>
+                        <segue destination="Xvr-Co-45T" kind="modal" identifier="EditLocation" id="eqU-bB-yJf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qmy-SE-eff" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="235" y="1323"/>
+            <point key="canvasLocation" x="473" y="677"/>
         </scene>
         <!--Navigation Controller - Locations-->
         <scene sceneID="yKQ-r7-Lae">
@@ -194,7 +201,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dxu-fm-27J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="235" y="579"/>
+            <point key="canvasLocation" x="235" y="-140"/>
         </scene>
         <!--Location Details View Controller - Tag Location-->
         <scene sceneID="vGC-lg-Gbi">
@@ -467,7 +474,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-356" y="198"/>
+            <point key="canvasLocation" x="-432" y="-140"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sEJ-IN-O8f">
@@ -498,6 +505,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="gfu-9m-YH8"/>
+        <segue reference="eqU-bB-yJf"/>
     </inferredMetricsTieBreakers>
 </document>
