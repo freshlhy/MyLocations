@@ -8,8 +8,9 @@
 
 #import "CurrentLocationViewController.h"
 #import "LocationDetailsViewController.h"
+#import "NSMutableString+AddText.h"
 
-@interface CurrentLocationViewController ()
+@interface CurrentLocationViewController () <UITabBarControllerDelegate>
 
 @end
 
@@ -37,6 +38,9 @@
     [super viewDidLoad];
     [self updateLabels];
     [self configureGetButton];
+    
+    self.tabBarController.delegate = self;
+    self.tabBarController.tabBar.translucent = NO;
 }
 
 - (IBAction)getLocation:(id)sender {
@@ -231,15 +235,13 @@
 
     NSMutableString *line1 = [NSMutableString stringWithCapacity:100];
 
-    [self addText:thePlacemark.subLocality toLine:line1 withSeparator:@""];
-    [self addText:thePlacemark.locality toLine:line1 withSeparator:@" "];
+    [line1 addText:thePlacemark.subLocality withSeparator:@""];
+    [line1 addText:thePlacemark.locality withSeparator:@" "];
 
     NSMutableString *line2 = [NSMutableString stringWithCapacity:100];
 
-    [self addText:thePlacemark.administrativeArea
-               toLine:line2
-        withSeparator:@""];
-    [self addText:thePlacemark.country toLine:line2 withSeparator:@" "];
+    [line2 addText:thePlacemark.administrativeArea withSeparator:@""];
+    [line2 addText:thePlacemark.country withSeparator:@" "];
 
     if ([line1 length] == 0) {
         [line2 appendString:@"\n "];
@@ -248,17 +250,6 @@
         [line1 appendString:@"\n"];
         [line1 appendString:line2];
         return line1;
-    }
-}
-
-- (void)addText:(NSString *)text
-           toLine:(NSMutableString *)line
-    withSeparator:(NSString *)separator {
-    if (text != nil) {
-        if ([line length] > 0) {
-            [line appendString:separator];
-        }
-        [line appendString:text];
     }
 }
 
@@ -285,6 +276,13 @@
         controller.placemark = _placemark;
         controller.managedObjectContext = self.managedObjectContext;
     }
+}
+
+#pragma mark - UITabBarControllerDelegate
+- (BOOL)tabBarController:(UITabBarController *)tabBarController
+    shouldSelectViewController:(UIViewController *)viewController {
+    tabBarController.tabBar.translucent = (viewController != self);
+    return YES;
 }
 
 @end
