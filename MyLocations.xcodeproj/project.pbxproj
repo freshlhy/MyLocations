@@ -32,6 +32,7 @@
 		59EE268D18D87E3000D8930C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59EE268C18D87E3000D8930C /* CoreData.framework */; };
 		59EE269018D87E8600D8930C /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59EE268E18D87E8600D8930C /* DataModel.xcdatamodeld */; };
 		59EE269318D89B2C00D8930C /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EE269218D89B2C00D8930C /* Location.m */; };
+		59F5BFDB18E2738C00692742 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F5BFDA18E2738C00692742 /* UIImage+Resize.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		59EE268F18D87E8600D8930C /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		59EE269118D89B2C00D8930C /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		59EE269218D89B2C00D8930C /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		59F5BFD918E2738C00692742 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		59F5BFDA18E2738C00692742 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,8 @@
 				5907AF0C18DA9CDF00A43268 /* LocationCell.m */,
 				59A0881718DC1B860060248F /* MapViewController.h */,
 				59A0881818DC1B860060248F /* MapViewController.m */,
+				59F5BFD918E2738C00692742 /* UIImage+Resize.h */,
+				59F5BFDA18E2738C00692742 /* UIImage+Resize.m */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 				5907AF0D18DA9CDF00A43268 /* LocationCell.m in Sources */,
 				5907AF0A18DA957500A43268 /* LocationsViewController.m in Sources */,
 				59E31D8F18D13A5000F03728 /* CurrentLocationViewController.m in Sources */,
+				59F5BFDB18E2738C00692742 /* UIImage+Resize.m in Sources */,
 				59EE269318D89B2C00D8930C /* Location.m in Sources */,
 				59E31D8518D13A5000F03728 /* main.m in Sources */,
 				59DC6B4718D834A4006F0DBC /* HudView.m in Sources */,
