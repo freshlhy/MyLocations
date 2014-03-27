@@ -36,6 +36,8 @@
 		59EE269018D87E8600D8930C /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59EE268E18D87E8600D8930C /* DataModel.xcdatamodeld */; };
 		59EE269318D89B2C00D8930C /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EE269218D89B2C00D8930C /* Location.m */; };
 		59F5BFDB18E2738C00692742 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F5BFDA18E2738C00692742 /* UIImage+Resize.m */; };
+		59F5BFDD18E40FD100692742 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F5BFDC18E40FD100692742 /* AudioToolbox.framework */; };
+		59F5BFE018E4102100692742 /* Sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 59F5BFDF18E4102100692742 /* Sound.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,8 @@
 		59EE269218D89B2C00D8930C /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		59F5BFD918E2738C00692742 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
 		59F5BFDA18E2738C00692742 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		59F5BFDC18E40FD100692742 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		59F5BFDF18E4102100692742 /* Sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sound.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59F5BFDD18E40FD100692742 /* AudioToolbox.framework in Frameworks */,
 				59A0881618DBF4910060248F /* MapKit.framework in Frameworks */,
 				59EE268D18D87E3000D8930C /* CoreData.framework in Frameworks */,
 				59E31DB118D1463C00F03728 /* CoreLocation.framework in Frameworks */,
@@ -145,6 +150,7 @@
 		59E31D7718D13A5000F03728 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				59F5BFDC18E40FD100692742 /* AudioToolbox.framework */,
 				59A0881518DBF4910060248F /* MapKit.framework */,
 				59EE268C18D87E3000D8930C /* CoreData.framework */,
 				59E31DB018D1463C00F03728 /* CoreLocation.framework */,
@@ -159,6 +165,7 @@
 		59E31D7E18D13A5000F03728 /* MyLocations */ = {
 			isa = PBXGroup;
 			children = (
+				59F5BFDE18E4102100692742 /* Sound */,
 				59E31D8718D13A5000F03728 /* AppDelegate.h */,
 				59E31D8818D13A5000F03728 /* AppDelegate.m */,
 				59E31D8A18D13A5000F03728 /* Main.storyboard */,
@@ -220,6 +227,14 @@
 				59E31DA318D13A5000F03728 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		59F5BFDE18E4102100692742 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				59F5BFDF18E4102100692742 /* Sound.caf */,
+			);
+			path = Sound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +315,7 @@
 			files = (
 				59E31D9418D13A5000F03728 /* Images.xcassets in Resources */,
 				59E31D8318D13A5000F03728 /* InfoPlist.strings in Resources */,
+				59F5BFE018E4102100692742 /* Sound.caf in Resources */,
 				59E31D8C18D13A5000F03728 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
